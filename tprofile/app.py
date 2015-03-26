@@ -7,8 +7,9 @@ import tornado.web
 def profile(func):
     def wrap(application, request):
         print "profile start", application, request
-        return func(application, request)
+        ret = func(application, request)
         print "profile end."
+        return ret
 
     return wrap
 
